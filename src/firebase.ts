@@ -13,7 +13,7 @@ const firebaseConfig = {
   storageBucket: "facebook-clone-ef8ca.appspot.com",
   messagingSenderId: "562002586732",
   appId: "1:562002586732:web:7b8a75583409a77938bc49",
-  measurementId: "G-E8V6EN3NH1"
+  measurementId: "G-E8V6EN3NH1",
 };
 
 // Initialize Firebase

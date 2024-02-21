@@ -1,10 +1,25 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import Feed from "./components/feed/Feed";
 
-type AppProps = {
-  
+type AppProps = {};
+
+const App: React.FC<AppProps> = () => {
+  return (
+    <div>
+      <Header />
+      <div className="appBody">
+        <Sidebar />
+        <Feed />
+      </div>
+      {/* <BrowserRouter>
+        <Routes>
+          <Route></Route>
+        </Routes>
+      </BrowserRouter> */}
+    </div>
+  );
 };
-
-const App:React.FC<AppProps> = () => { 
-  return <div>Have a good coding</div>
-}
 export default App;
