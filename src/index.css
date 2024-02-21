@@ -13,3 +13,7 @@ html {
   --lightblue: rgb(241, 245, 250);
   --hover: #2e81f4;
 }
+
+.appBody {
+  display: flex;
+}
