@@ -1,0 +1,31 @@
+.login {
+    display: flex;
+    justify-content: center;
+    padding: 55px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 155px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0c6ef8;
+    gap: 28px;
+}
+
+button {
+    width: 300px;
+    background-color: #0c6ef8;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: medium;
+
+    &:hover {
+        background-color: #2e81f4;
+    }
+}

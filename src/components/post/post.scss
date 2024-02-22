@@ -12,6 +12,9 @@
         padding: 12px;
 
         .top_info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
             margin-left: 15px;
 
@@ -23,11 +26,19 @@
                 color: gray;
                 font-size: small;
             }
+
+            .threeDots {
+                color: rgb(83, 83, 83);
+            }
         }
     }
 
     .post_body {
         width: 100%;
+
+        .title {
+            padding: 0 10px;
+        }
 
         .post_img {
             width: 100%;

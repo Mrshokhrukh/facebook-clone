@@ -1,11 +1,12 @@
 import React from "react";
 import "./post.scss";
-import { Avatar } from "@mui/material";
+import { Avatar, Icon, IconButton } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SendIcon from "@mui/icons-material/Send";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 type Reactions = {
   likes: string | number;
   shares: string | number;
@@ -33,13 +34,20 @@ const Post: React.FC<PostProps> = ({
       <div className="post_top">
         <Avatar src={profileImg} className="post_avatar" />
         <div className="top_info">
-          <h3>{username}</h3>
-          {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
-          <p className="timestamp">4 hoours ago</p>
+          <div>
+            <h3>{username}</h3>
+            {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
+            <p className="timestamp">4 hoours ago</p>
+          </div>
+          <div>
+            <IconButton>
+              <MoreHorizIcon className="threeDots" />
+            </IconButton>
+          </div>
         </div>
       </div>
       <div className="post_body">
-        <p>{title}</p>
+        <p className="title">{title}</p>
         <div className="post_img">
           <img src={postImg} alt="" />
         </div>
