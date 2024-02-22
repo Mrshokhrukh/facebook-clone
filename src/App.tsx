@@ -8,18 +8,21 @@ type AppProps = {};
 
 const App: React.FC<AppProps> = () => {
   return (
-    <div>
+    <>
       <Header />
-      <div className="appBody">
-        <Sidebar />
-        <Feed />
-      </div>
-      {/* <BrowserRouter>
+      <div className="container">
+        <div className="appBody">
+          <Sidebar />
+          <Feed />
+      
+        </div>
+        {/* <BrowserRouter>
         <Routes>
           <Route></Route>
         </Routes>
       </BrowserRouter> */}
-    </div>
+      </div>
+    </>
   );
 };
 export default App;

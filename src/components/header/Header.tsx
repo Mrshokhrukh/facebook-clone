@@ -16,48 +16,50 @@ type HeaderProps = {};
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <div className="header">
-      <div className="header_left">
-        <img src={logo} alt="" />
-        <div className="head_search_field">
-          <SearchIcon />
-          <input type="text" placeholder="Search facebook" />
+    <div className="head">
+      <div className="header">
+        <div className="header_left">
+          <img src={logo} alt="" />
+          <div className="head_search_field">
+            <SearchIcon />
+            <input type="text" placeholder="Search facebook" />
+          </div>
         </div>
-      </div>
-      <div className="header_middle">
-        <div className="header_option nav-active">
-          <HomeIcon fontSize="large" />
+        <div className="header_middle">
+          <div className="header_option nav-active">
+            <HomeIcon fontSize="large" />
+          </div>
+          <div className="header_option">
+            <AssistantPhotoIcon fontSize="large" />
+          </div>
+          <div className="header_option">
+            <SubscriptionsIcon fontSize="large" />
+          </div>
+          <div className="header_option">
+            <StorefrontIcon fontSize="large" />
+          </div>
+          <div className="header_option">
+            <SupervisedUserCircleIcon fontSize="large" />
+          </div>
         </div>
-        <div className="header_option">
-          <AssistantPhotoIcon fontSize="large" />
+        <div className="header_right">
+          <div className="r_header_info">
+            <Avatar />
+            <h4>Shokhrukh</h4>
+          </div>
+          <IconButton>
+            <AddIcon />
+          </IconButton>
+          <IconButton>
+            <ForumIcon />
+          </IconButton>
+          <IconButton>
+            <NotificationsActiveIcon />
+          </IconButton>
+          <IconButton>
+            <ExpandMoreIcon />
+          </IconButton>
         </div>
-        <div className="header_option">
-          <SubscriptionsIcon fontSize="large" />
-        </div>
-        <div className="header_option">
-          <StorefrontIcon fontSize="large" />
-        </div>
-        <div className="header_option">
-          <SupervisedUserCircleIcon fontSize="large" />
-        </div>
-      </div>
-      <div className="header_right">
-        <div className="r_header_info">
-          <Avatar />
-          <h4>Shokhrukh</h4>
-        </div>
-        <IconButton>
-          <AddIcon />
-        </IconButton>
-        <IconButton>
-          <ForumIcon />
-        </IconButton>
-        <IconButton>
-          <NotificationsActiveIcon />
-        </IconButton>
-        <IconButton>
-          <ExpandMoreIcon />
-        </IconButton>
       </div>
     </div>
   );
