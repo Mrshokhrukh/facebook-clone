@@ -36,8 +36,10 @@ const Post: React.FC<PostProps> = ({
         <div className="top_info">
           <div>
             <h3>{username}</h3>
-            {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
-            <p className="timestamp">4 hoours ago</p>
+            <p className="timestamp">
+              {new Date(timestamp?.toDate()).toUTCString()}
+            </p>
+
           </div>
           <div>
             <IconButton>

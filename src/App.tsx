@@ -5,15 +5,17 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Feed from "./components/feed/Feed";
 import Widgets from "./components/widgets/Widgets";
 import Login from "./components/login/Login";
-
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
 type AppProps = {};
 
 const App: React.FC<AppProps> = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
-
+  const [data] = useAuthState(auth);
+  
   return (
     <>
-      {!user.user.emailVerified ? (
+      {!(user.user.emailVerified && data) ? (
         <Login />
       ) : (
         <div>
