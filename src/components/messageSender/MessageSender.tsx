@@ -7,6 +7,8 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 type MessageSenderProps = {};
 
 const MessageSender: React.FC<MessageSenderProps> = () => {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+
   const [input, setInput] = useState<string>("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
   return (
     <div className="messageSender">
       <div className="msgSender_top">
-        <Avatar />
+        <Avatar src={user.user.photoURL} />
         <form onSubmit={handleSubmit}>
           <input
             type="text"

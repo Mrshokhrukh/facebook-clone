@@ -15,6 +15,8 @@ import { Avatar, IconButton } from "@mui/material";
 type HeaderProps = {};
 
 const Header: React.FC<HeaderProps> = () => {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+
   return (
     <div className="head">
       <div className="header">
@@ -44,8 +46,8 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="header_right">
           <div className="r_header_info">
-            <Avatar />
-            <h4>Shokhrukh</h4>
+            <Avatar src={user.user.photoURL} />
+            <h4>{user.user.displayName}</h4>
           </div>
           <IconButton>
             <AddIcon />

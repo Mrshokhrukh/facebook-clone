@@ -1,11 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./feed.scss";
 import StoryReel from "../storyReel/StoryReel";
 import MessageSender from "../messageSender/MessageSender";
 import Post from "../post/Post";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../../firebase";
 type FeedProps = {};
 
 const Feed: React.FC<FeedProps> = () => {
+  const [posts, setPosts] = useState<any>([]);
+
+  useEffect(() => {
+    const get = async () => {
+      const querySnapshot = await getDocs(collection(db, "users"));
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+      });
+    };
+    get();
+    // try {
+    //   const fetchPost = async () => {
+    //     await getDocs(collection(db, "posts")).then((querySnapshot) => {
+
+    //       const newData = querySnapshot.docs.map((doc) => ({
+    //         ...doc.data(),
+    //         id: doc.id,
+    //       }));
+    //       setPosts(newData);
+    //       console.log(posts, newData);
+    //     });
+    //   };
+    //   fetchPost();
+    // } catch (e) {
+    //   console.log(e);
+    // }
+  }, []);
+
   return (
     <div className="feed">
       <StoryReel />

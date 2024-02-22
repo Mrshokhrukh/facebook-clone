@@ -11,12 +11,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 type SidebarProps = {};
 
 const Sidebar: React.FC<SidebarProps> = () => {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
   return (
     <div className="sidebar">
-      <SidebarRow
-        src="https://avatars.githubusercontent.com/u/114140248?v=4"
-        title="shokhrukh"
-      />
+      <SidebarRow src={user.user.photoURL} title={user.user.displayName} />
       <SidebarRow title="COVID-19 Info center" icon={<LocalHospitalIcon />} />
       <SidebarRow title="Pages" icon={<EmojiFlagsIcon />} />
       <SidebarRow title="Friends" icon={<PeopleIcon />} />

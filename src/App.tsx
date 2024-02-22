@@ -9,10 +9,11 @@ import Login from "./components/login/Login";
 type AppProps = {};
 
 const App: React.FC<AppProps> = () => {
-  const user = null;
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+
   return (
     <>
-      {!user ? (
+      {!user.user.emailVerified ? (
         <Login />
       ) : (
         <div>
