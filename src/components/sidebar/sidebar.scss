@@ -1,4 +1,7 @@
 .sidebar {
     padding: 25px 10px;
-    flex: 0.33;
+    position: sticky;
+    top: 60px;
+    height: 500px;
+    transition: 0.3s ease;
 }
