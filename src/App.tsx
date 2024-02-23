@@ -10,12 +10,11 @@ import { auth } from "./firebase";
 type AppProps = {};
 
 const App: React.FC<AppProps> = () => {
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
   const [data] = useAuthState(auth);
 
   return (
     <>
-      {!(user || data) ? (
+      {!data ? (
         <Login />
       ) : (
         <div>

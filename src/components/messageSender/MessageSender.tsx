@@ -41,7 +41,7 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
   return (
     <div className="messageSender">
       <div className="msgSender_top">
-        <Avatar src={user.user.photoURL} />
+        <Avatar src={user?.user.photoURL} />
         <form onSubmit={handleSubmit}>
           <input
             type="text"

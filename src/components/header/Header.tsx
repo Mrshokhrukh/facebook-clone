@@ -46,8 +46,8 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="header_right">
           <div className="r_header_info">
-            <Avatar src={user.user.photoURL} />
-            <h4>{user.user.displayName}</h4>
+            <Avatar src={user?.user.photoURL} />
+            <h4>{user?.user.displayName}</h4>
           </div>
           <IconButton className="r_h_icons">
             <AddIcon />

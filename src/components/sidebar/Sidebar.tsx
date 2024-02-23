@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   return (
     <div className="sidebar">
-      <SidebarRow src={user.user.photoURL} title={user.user.displayName} />
+      <SidebarRow src={user?.user.photoURL} title={user?.user.displayName} />
       <SidebarRow title="COVID-19 Info center" icon={<LocalHospitalIcon />} />
       <SidebarRow title="Pages" icon={<EmojiFlagsIcon />} />
       <SidebarRow title="Friends" icon={<PeopleIcon />} />
