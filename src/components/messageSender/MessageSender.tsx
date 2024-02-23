@@ -1,17 +1,41 @@
 import React, { useState } from "react";
 import "./msgSender.scss";
+import { doc, setDoc, Timestamp } from "firebase/firestore";
 import { Avatar } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import { db } from "../../firebase";
 type MessageSenderProps = {};
 
 const MessageSender: React.FC<MessageSenderProps> = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
-
   const [input, setInput] = useState<string>("");
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [image, setImage] = useState<string>("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    let postId = Math.random();
+
+    try {
+      const docData = {
+        postDescription: input,
+        image: image
+          ? image
+          : "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
+        profileImg: user?.user.photoURL,
+        timestamp: Timestamp.fromDate(new Date()),
+        username: user?.user.displayName,
+        id: postId,
+      };
+
+      await setDoc(doc(db, "posts", `${postId}`), docData);
+    } catch (e) {
+      alert(e);
+    }
+
+    setInput("");
+    setImage("");
   };
 
   return (
@@ -24,6 +48,7 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
             placeholder="What's on your mind ?"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            required
           />
           <button>Post</button>
         </form>

@@ -29,19 +29,19 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="header_middle">
           <div className="header_option nav-active">
-            <HomeIcon fontSize="large" />
+            <HomeIcon className="head_icon" />
           </div>
           <div className="header_option">
-            <AssistantPhotoIcon fontSize="large" />
+            <AssistantPhotoIcon className="head_icon" />
           </div>
           <div className="header_option">
-            <SubscriptionsIcon fontSize="large" />
+            <SubscriptionsIcon className="head_icon" />
           </div>
           <div className="header_option">
-            <StorefrontIcon fontSize="large" />
+            <StorefrontIcon className="head_icon" />
           </div>
           <div className="header_option">
-            <SupervisedUserCircleIcon fontSize="large" />
+            <SupervisedUserCircleIcon className="head_icon" />
           </div>
         </div>
         <div className="header_right">
