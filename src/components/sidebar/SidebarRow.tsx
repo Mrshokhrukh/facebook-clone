@@ -11,7 +11,7 @@ const SidebarRow: React.FC<SidebarRowProps> = ({ src, icon, title }) => {
   return (
     <div className="sidebar_row">
       {src && <Avatar src={src} />}
-      {icon && <span>{icon}</span>}
+      {icon && <span className="sidebar_icon">{icon}</span>}
       <h4>{title}</h4>
     </div>
   );

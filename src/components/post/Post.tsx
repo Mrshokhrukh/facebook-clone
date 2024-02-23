@@ -56,20 +56,20 @@ const Post: React.FC<PostProps> = ({
       </div>
       <div className="post_bottom">
         <div className="post_action">
-          <ThumbUpIcon />
+          <ThumbUpIcon id='post_action_icon'/>
           <p>Like</p>
         </div>
         <div className="post_action">
-          <ChatBubbleOutlineIcon />
+          <ChatBubbleOutlineIcon id='post_action_icon'/>
           <p>Comment</p>
         </div>
         <div className="post_action">
-          <SendIcon />
+          <SendIcon id='post_action_icon'/>
           <p>Share</p>
         </div>
         <div className="post_action">
-          <AccountCircleIcon />
-          <ExpandMoreIcon />
+          <AccountCircleIcon id='post_action_icon'/>
+          <ExpandMoreIcon id='post_action_icon'/>
         </div>
       </div>
     </div>

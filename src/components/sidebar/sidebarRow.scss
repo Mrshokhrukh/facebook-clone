@@ -21,3 +21,35 @@
 
 
 }
+
+@media(max-width:992px) {
+
+    h4 {
+        display: none;
+    }
+
+    .sidebar_row {
+        width: 45px;
+        padding: 6px 0px;
+
+        .MuiSvgIcon-root {
+            font-size: 28px;
+            color: #2e81f4;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+
+    }
+
+    .sidebar_icon {
+        background-color: rgb(255, 255, 255);
+        padding: 6px;
+        border-radius: 50%;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+}

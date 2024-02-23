@@ -6,7 +6,7 @@ const Widgets: React.FC<WidgetsProps> = () => {
   return (
     <div className="widgets">
       <div>
-        <h2>widgets</h2>
+        {/* <h2>widgets</h2> */}
       </div>
     </div>
   );
