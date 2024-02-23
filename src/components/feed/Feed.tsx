@@ -16,7 +16,7 @@ const Feed: React.FC<FeedProps> = () => {
       <StoryReel />
       <MessageSender />
       <div className="posts_container">
-        {postData.data?.map((post, i) => {
+        {postData.data?.map((post: any, i: any) => {
           return (
             <Post
               key={i}

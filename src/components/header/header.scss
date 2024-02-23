@@ -64,6 +64,10 @@
         .head_icon {
             font-size: 32px;
         }
+
+        @media(max-width:1024px) {
+            display: none;
+        }
     }
 
     .nav-active {
@@ -74,7 +78,13 @@
 
 .header_right {
     display: flex;
-    padding: 10px 0px;
+    padding: 10px 20px;
+
+    .r_h_icons {
+        @media(max-width:1024px) {
+            display: none;
+        }
+    }
 
     .r_header_info {
         display: flex;
@@ -83,5 +93,13 @@
         h4 {
             margin-left: 10px;
         }
+
+        @media(max-width:1200px) {
+            h4 {
+                display: none;
+            }
+        }
     }
+
+
 }

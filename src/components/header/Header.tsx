@@ -49,16 +49,16 @@ const Header: React.FC<HeaderProps> = () => {
             <Avatar src={user.user.photoURL} />
             <h4>{user.user.displayName}</h4>
           </div>
-          <IconButton>
+          <IconButton className="r_h_icons">
             <AddIcon />
           </IconButton>
-          <IconButton>
+          <IconButton className="r_h_icons">
             <ForumIcon />
           </IconButton>
-          <IconButton>
+          <IconButton className="r_h_icons">
             <NotificationsActiveIcon />
           </IconButton>
-          <IconButton>
+          <IconButton className="r_h_icons">
             <ExpandMoreIcon />
           </IconButton>
         </div>

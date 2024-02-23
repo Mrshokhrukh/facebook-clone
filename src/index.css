@@ -24,3 +24,14 @@ html {
   display: grid;
   grid-template-columns: 300px auto 300px;
 }
+
+@media (max-width: 1300px) {
+  .appBody {
+    grid-template-columns: 300px auto 200px;
+  }
+}
+@media (max-width: 1200px) {
+  .appBody {
+    grid-template-columns: 300px auto;
+  }
+}

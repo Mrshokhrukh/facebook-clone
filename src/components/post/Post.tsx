@@ -1,6 +1,6 @@
 import React from "react";
 import "./post.scss";
-import { Avatar, Icon, IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";

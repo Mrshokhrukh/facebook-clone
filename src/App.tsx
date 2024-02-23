@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import Feed from "./components/feed/Feed";
@@ -15,7 +15,7 @@ const App: React.FC<AppProps> = () => {
 
   return (
     <>
-      {!data ? (
+      {!(user || data) ? (
         <Login />
       ) : (
         <div>
