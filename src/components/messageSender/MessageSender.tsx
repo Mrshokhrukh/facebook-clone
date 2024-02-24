@@ -11,7 +11,17 @@ type MessageSenderProps = {};
 const MessageSender: React.FC<MessageSenderProps> = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const [input, setInput] = useState<string>("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState("");
+
+  const handleChangeImg = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const file = files[0];
+      setImage(file);
+      setImageUrl(URL.createObjectURL(file));
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,8 +30,8 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
     try {
       const docData = {
         postDescription: input,
-        image: image
-          ? image
+        image: imageUrl
+          ? imageUrl
           : "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
         profileImg: user?.user.photoURL,
         timestamp: Timestamp.fromDate(new Date()),
@@ -35,11 +45,13 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
     }
 
     setInput("");
-    setImage("");
+    setImage(null);
+    setImageUrl("");
   };
 
   return (
     <div className="messageSender">
+      <img src={imageUrl} alt="" />
       <div className="msgSender_top">
         <Avatar src={user?.user.photoURL} />
         <form onSubmit={handleSubmit}>
@@ -58,10 +70,14 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
           <VideocamIcon style={{ color: "red" }} />
           <h3>Live Video</h3>
         </div>
-        <div className="msg_share_option">
+
+        <label className="msg_share_option img_upload">
+          <input type="file" accept="image/*" onChange={handleChangeImg} />
+
           <PhotoLibraryIcon style={{ color: "green" }} />
           <h3>Photo/Video</h3>
-        </div>
+        </label>
+
         <div className="msg_share_option">
           <InsertEmoticonIcon style={{ color: "orange" }} />
           <h3>Feeling/Activity</h3>

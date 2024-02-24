@@ -7,14 +7,15 @@ import Widgets from "./components/widgets/Widgets";
 import Login from "./components/login/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
+import { ToastContainer } from "react-toastify";
 type AppProps = {};
 
 const App: React.FC<AppProps> = () => {
-  const [data] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return (
     <>
-      {!data ? (
+      {!user ? (
         <Login />
       ) : (
         <div>
@@ -28,6 +29,8 @@ const App: React.FC<AppProps> = () => {
           </div>
         </div>
       )}
+      <ToastContainer />
+      
     </>
   );
 };

@@ -70,6 +70,12 @@
             font-weight: 600;
         }
     }
+
+    .img_upload {
+        input {
+            display: none;
+        }
+    }
 }
 
 
@@ -105,7 +111,7 @@
 
         .msgSender_top form button {
             width: 50px;
-           font-size: 12px;
+            font-size: 12px;
         }
     }
 }
