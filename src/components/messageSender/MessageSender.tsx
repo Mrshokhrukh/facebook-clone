@@ -6,6 +6,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import { db } from "../../firebase";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 type MessageSenderProps = {};
 
 const MessageSender: React.FC<MessageSenderProps> = () => {
@@ -13,6 +14,10 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
   const [input, setInput] = useState<string>("");
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
+  /**
+   * firebase storage for uploading image
+   */
+  const storage = getStorage();
 
   const handleChangeImg = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -26,13 +31,26 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let postId = Math.random();
-
     try {
+      // if (image) {
+      //   const storageRef = ref(storage, `images/${postId}/${image.name}`);
+
+      //   uploadBytes(storageRef, image).then((snapshot) => {
+      //     getDownloadURL(snapshot.ref)
+      //       .then((url) => {
+      //         setImageUrl(url);
+      //       })
+      //       .catch((error) => {
+      //         alert(error.message);
+      //       });
+      //   });
+      // }
+
       const docData = {
         postDescription: input,
-        image: imageUrl
-          ? imageUrl
-          : "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
+        image:
+          imageUrl ||
+          "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
         profileImg: user?.user.photoURL,
         timestamp: Timestamp.fromDate(new Date()),
         username: user?.user.displayName,
