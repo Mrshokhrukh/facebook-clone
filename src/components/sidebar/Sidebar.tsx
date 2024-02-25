@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sidebar.scss";
 import SidebarRow from "./SidebarRow";
 import EmojiFlagsIcon from "@mui/icons-material/EmojiFlags";
@@ -11,11 +11,12 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { useDispatch, useSelector } from "react-redux";
 import { openSidebar } from "../../redux/sidebarSlice";
+import { RootState } from "../../redux/store";
 type SidebarProps = {};
 
 const Sidebar: React.FC<SidebarProps> = () => {
   let dispatch = useDispatch();
-  const open = useSelector((state) => state.sidebar.isOpen);
+  const open = useSelector((state: RootState) => state.sidebar.isOpen);
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   return (
     <>

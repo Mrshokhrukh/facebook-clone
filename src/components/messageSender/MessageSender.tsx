@@ -6,24 +6,23 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import { db } from "../../firebase";
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 type MessageSenderProps = {};
 
 const MessageSender: React.FC<MessageSenderProps> = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const [input, setInput] = useState<string>("");
-  const [image, setImage] = useState<File | null>(null);
+  // const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   /**
    * firebase storage for uploading image
    */
-  const storage = getStorage();
+  // const storage = getStorage();
 
   const handleChangeImg = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage(file);
+      // setImage(file);
       setImageUrl(URL.createObjectURL(file));
     }
   };
@@ -61,7 +60,7 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
     }
 
     setInput("");
-    setImage(null);
+    // setImage(null);
     setImageUrl("");
   };
 
