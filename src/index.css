@@ -10,9 +10,27 @@ html {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: rgb(240, 240, 240);
 }
+body {
+  overflow-x: hidden;
+}
 :root {
   --lightblue: rgb(241, 245, 250);
   --hover: #2e81f4;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2e8bf5;
+  border-radius: 10px;
 }
 
 .container {

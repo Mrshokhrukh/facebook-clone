@@ -64,10 +64,6 @@
         .head_icon {
             font-size: 32px;
         }
-
-        @media(max-width:1024px) {
-            display: none;
-        }
     }
 
     .nav-active {
@@ -102,4 +98,31 @@
     }
 
 
+}
+
+@media(max-width:1024px) {
+    .header_middle {
+        display: none;
+    }
+}
+
+@media(max-width:512px) {
+
+    .header_right,
+    .header_left {
+        padding: 5px 10px;
+    }
+
+    .header_left {
+        align-items: center;
+
+        .head_search_field {
+            padding: 5px 10px;
+            height: 32px;
+
+            input {
+                font-size: 14px;
+            }
+        }
+    }
 }
