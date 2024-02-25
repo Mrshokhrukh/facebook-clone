@@ -8,6 +8,7 @@ import Login from "./components/login/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
 import { ToastContainer } from "react-toastify";
+import StoryModal from "./components/story/StoryModal";
 type AppProps = {};
 
 const App: React.FC<AppProps> = () => {
@@ -30,7 +31,7 @@ const App: React.FC<AppProps> = () => {
         </div>
       )}
       <ToastContainer />
-      
+      <StoryModal />
     </>
   );
 };
