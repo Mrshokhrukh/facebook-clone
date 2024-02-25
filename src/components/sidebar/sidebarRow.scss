@@ -4,6 +4,7 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 8px;
+    user-select: none;
 
     &:hover {
         background-color: lightgray;
