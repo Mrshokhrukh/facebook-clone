@@ -40,3 +40,8 @@ html {
     grid-template-columns: 70px auto;
   }
 }
+@media (max-width: 481px) {
+  .appBody {
+    grid-template-columns: auto;
+  }
+}

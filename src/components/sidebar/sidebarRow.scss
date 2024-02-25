@@ -52,4 +52,9 @@
         align-items: center;
     }
 
+    @media (max-width:481px) {
+        .sidebar_icon:hover {
+            background-color: rgb(241, 241, 241);
+        }
+    }
 }

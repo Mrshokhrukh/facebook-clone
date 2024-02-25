@@ -48,9 +48,7 @@ const MessageSender: React.FC<MessageSenderProps> = () => {
 
       const docData = {
         postDescription: input,
-        image:
-          imageUrl ||
-          "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
+        image: imageUrl || "",
         profileImg: user?.user.photoURL,
         timestamp: Timestamp.fromDate(new Date()),
         username: user?.user.displayName,
